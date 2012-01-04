@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+  <div id='calc_container'>
+  <h1>A Simple Calculator app that uses Ember.js</h1>
+  <script type="text/x-handlebars">
+    <span>Input values below and choose the math operation you want to perform.</span>
+    <div class='value_fields'>
+      {{view Calculator.ValueField1View
+       placeholder = "Input first value here"}}
+      {{view Calculator.ValueField2View
+       placeholder = "Input second value here"}}
+   </div>
+   <div class='operations'>
+    {{#view Ember.Button target="Calculator.calcController" action="sum"}}
+	   Sum
+	{{/view}}
+	{{#view Ember.Button target="Calculator.calcController" action="difference"}}
+	   Difference
+	{{/view}}
+	{{#view Ember.Button target="Calculator.calcController" action="product"}}
+	   Product
+	{{/view}}
+	{{#view Ember.Button target="Calculator.calcController" action="division"}}
+	   Division
+	{{/view}}
+   </div>
+   <div class='result'>
+     <h1>{{Calculator.calcController.result}}</h1>
+   </div>
+   <div class='archive'>
+    <span>ARCHIVE OF PREVIOUS CALCULATIONS</span>
+    {{#collection contentBinding="Calculator.resultItemsController" tagName="ul"}}
+     value1:{{content.value1}}
+     value2:{{content.value2}}
+     result:{{content.result}}
+    {{/collection}}
+   </div>
+  </script>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.6.1.min.js"%3E%3C/script%3E'))</script>
+  <script src="js/libs/ember-0.9.3.min.js"></script>
+  <script src="js/controllers/calc_controller.js"></script>
+  <script src="js/controllers/result_items_controller.js"></script>
+  <script src="js/views/valuefield1_view.js"></script>
+  <script src="js/views/valuefield2_view.js"></script>
+  <script src="js/views/result_view.js"></script>
+  <script src="js/models/result_item.js"></script>
+</body>
+</html>
