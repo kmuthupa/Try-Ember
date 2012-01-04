@@ -7,6 +7,9 @@ Calculator.resultItemsController = Ember.ArrayProxy.create({
          result: res
       });
       this.pushObject(item);
+   },
+   clearResultItems: function() {
+      this.each(this.removeObject, this);
    }
 })
 

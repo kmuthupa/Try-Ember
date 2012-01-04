@@ -85,10 +85,12 @@ a:hover { color: #036; }
 .value_fields { margin: 10px; padding: 10px;}
 .value_fields input {width: 200px; padding: 10px; border: grey solid 2px; font-size: 1.25em;}
 .operations { margin: 20px; }
-.operations button { width: 100px; padding: 5px; font-size: 1.25em; border: grey solid 2px;}
+.operations button { width: 120px; padding: 5px; font-size: 1.25em; border: grey solid 2px;}
+.reset button { width: 100px; padding: 5px; font-size: 1.0em; border: grey solid 2px;}
+.reset {position: absolute; top: 150px; right: 300px;}
 .archive .result { font-size: 1.5em; margin-top: 40px; margin-bottom: 20px; }
 .result h1 { font-size: 2.0em; }
-.archive li {list-style-type: none; padding: 5px;}
+.archive li {list-style-type: none; padding: 5px; font-size: 1.25em;}
 
 
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }

@@ -23,7 +23,13 @@ Calculator.CalcController = Ember.Object.extend({
 	newResultComputed: function() {
 	  if (this.value1 == null || this.value2 == null || this.result == null) return;
 	  Calculator.resultItemsController.createResultItem(this.value1, this.value2, this.result);
-	}.observes('result')
+	}.observes('result'),
+	reset: function() {
+	  this.set('value1', null);
+	  this.set('value2', null);
+	  this.set('result', null);
+	  Calculator.resultItemsController.clearResultItems();
+	}
 })
 
 Calculator.calcController = Calculator.CalcController.create();

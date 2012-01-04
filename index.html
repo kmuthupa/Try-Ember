@@ -27,26 +27,31 @@
    </div>
    <div class='operations'>
     {{#view Ember.Button target="Calculator.calcController" action="sum"}}
-	   Sum
+	   SUM
 	{{/view}}
 	{{#view Ember.Button target="Calculator.calcController" action="difference"}}
-	   Difference
+	   DIFFERENCE
 	{{/view}}
 	{{#view Ember.Button target="Calculator.calcController" action="product"}}
-	   Product
+	   PRODUCT
 	{{/view}}
 	{{#view Ember.Button target="Calculator.calcController" action="division"}}
-	   Division
+	   DIVISION
 	{{/view}}
    </div>
+   <div class='reset'>
+	     {{#view Ember.Button target="Calculator.calcController" action="reset"}}
+	       Reset
+	     {{/view}}
+	 </div>
    <div class='result'>
      <h1>{{Calculator.calcController.result}}</h1>
    </div>
    <div class='archive'>
     <span>ARCHIVE OF PREVIOUS CALCULATIONS</span>
     {{#collection contentBinding="Calculator.resultItemsController" tagName="ul"}}
-     value1:{{content.value1}}
-     value2:{{content.value2}}
+     First value:{{content.value1}}
+     Second value:{{content.value2}}
      result:{{content.result}}
     {{/collection}}
    </div>
